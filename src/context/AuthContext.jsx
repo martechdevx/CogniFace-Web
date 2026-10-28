@@ -161,7 +161,7 @@ export function AuthProvider({ children }) {
       logoutStarted.current = true;
       void apiLogout();
       clearLocal();
-      navigate("/");
+      navigate("/", { replace: true });
     };
 
     const recordActivity = () => {
@@ -178,7 +178,7 @@ export function AuthProvider({ children }) {
       if (event.key === "full_name" && event.newValue === null) {
         clearTimeout(expiryTimer);
         clearLocal();
-        navigate("/");
+        navigate("/login", { replace: true });
         return;
       }
       if (event.key === LOGIN_MODE_KEY && event.newValue) {

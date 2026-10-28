@@ -7,7 +7,7 @@ import {
   FiShield, FiLock, FiCheckCircle, FiClock, FiUser,
 } from "react-icons/fi";
 import styles from "./LoginForm.module.css";
-import logo from "../assets/logo-white.png"
+import BrandLogo from "./BrandLogo.jsx";
 
 function FaceOrb() {
   return (
@@ -106,9 +106,7 @@ function LoginForm() {
       {/* ── Left ── */}
       <div className={styles.left}>
         <Link to="/" className={styles.brand}>
-          {/* <div className={styles.logoMark}><FiShield color="white" size={18}/></div>
-          <span className={styles.brandName}>FaceID<span className={styles.brandAccent}>Pro</span></span> */}
-          <img src={logo} alt="Logo"></img>
+          <BrandLogo className={styles.brandLogo} />
         </Link>
 
         <h1 className={styles.heading}>{adminMode ? "Admin sign in" : "Welcome back"}</h1>
@@ -205,7 +203,7 @@ function LoginForm() {
           {[
             { icon: <FiShield size={12}/>, text: "5,000+ faces enrolled" },
             { icon: <FiCheckCircle size={12}/>, text: "Sub-second matching" },
-            { icon: <FiLock size={12}/>, text: "HMAC-secured API" },
+            { icon: <FiLock size={12}/>, text: "HttpOnly session cookies" },
           ].map(s => (
             <div key={s.text} className={styles.pill}>{s.icon} {s.text}</div>
           ))}

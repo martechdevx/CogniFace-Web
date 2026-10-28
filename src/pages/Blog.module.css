@@ -1,0 +1,199 @@
+.blogPage {
+  max-width: 1240px;
+  min-height: calc(100vh - var(--nav-h));
+  margin: 0 auto;
+  padding: 60px clamp(20px, 6vw, 82px) 76px;
+  color: var(--white);
+}
+
+.blogHeader {
+  max-width: 750px;
+  margin: 0 auto 34px;
+  text-align: center;
+  animation: journalEnter 450ms ease both;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.blogHeader h1 {
+  margin-top: 15px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 650;
+  letter-spacing: -2px;
+  line-height: 1.08;
+}
+
+.blogHeader h1 span { color: var(--blue); }
+.blogHeader p {
+  max-width: 550px;
+  margin: 16px auto 0;
+  color: var(--white-60);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.tagFilter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px;
+  margin-bottom: 27px;
+}
+
+.tagFilter button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--white-60);
+  font-size: 11px;
+  font-weight: 550;
+  transition: background .16s ease, border-color .16s ease, color .16s ease;
+}
+
+.tagFilter button:hover { border-color: var(--border-2); color: var(--white); }
+.tagFilter .activeTag { border-color: rgba(21,94,239,.22); background: rgba(21,94,239,.08); color: var(--blue); }
+
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  margin-top: 13px;
+  animation: journalEnter 450ms 80ms ease both;
+}
+
+.postCard {
+  display: flex;
+  gap: 15px;
+  min-height: 205px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.postCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(21,94,239,.22);
+  box-shadow: var(--shadow);
+}
+
+.featuredCard {
+  min-height: 245px;
+  align-items: center;
+  padding: clamp(24px, 4vw, 38px);
+  background: linear-gradient(110deg, var(--card-bg) 58%, rgba(21,94,239,.035));
+}
+
+.cardIcon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(21,94,239,.13);
+  border-radius: 7px;
+  background: rgba(21,94,239,.07);
+  color: var(--blue);
+  font-size: 15px;
+}
+
+.featuredCard .cardIcon { width: 62px; height: 62px; font-size: 24px; }
+.cardBody { min-width: 0; display: flex; flex: 1; flex-direction: column; align-items: flex-start; }
+.cardEyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.cardEyebrow > span:first-child {
+  padding: 4px 7px;
+  border-radius: 4px;
+  background: rgba(21,94,239,.07);
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .55px;
+  text-transform: uppercase;
+}
+.cardEyebrow .featuredLabel { color: var(--white-60); font-size: 10px; }
+.cardBody h2 {
+  margin-top: 13px;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -.3px;
+  line-height: 1.35;
+}
+.featuredCard .cardBody h2 { max-width: 620px; font-size: clamp(22px, 3vw, 29px); }
+.cardBody p { margin-top: 8px; color: var(--white-60); font-size: 11px; line-height: 1.65; }
+.featuredCard .cardBody p { max-width: 680px; font-size: 13px; }
+.cardMeta {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 17px;
+  color: var(--white-60);
+  font-size: 10px;
+}
+.cardMeta i { width: 3px; height: 3px; border-radius: 50%; background: var(--white-30); }
+.readLabel { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; color: var(--blue); font-size: 10px; font-weight: 600; }
+
+.journalNote {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 30px;
+  padding: 23px 26px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface-soft);
+}
+
+.noteIcon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--card-bg);
+  color: var(--blue);
+}
+
+.journalNote h2 { margin-top: 5px; color: var(--white); font-size: 17px; font-weight: 650; }
+.journalNote p { margin-top: 4px; color: var(--white-60); font-size: 11px; }
+
+@keyframes journalEnter {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 650px) {
+  .blogPage { padding: 39px 17px 52px; }
+  .blogHeader { margin-bottom: 25px; text-align: left; }
+  .blogHeader h1 { font-size: clamp(34px, 10vw, 46px); letter-spacing: -1.5px; }
+  .blogHeader p { margin-left: 0; font-size: 13px; }
+  .tagFilter { justify-content: flex-start; margin-bottom: 20px; }
+  .postGrid { grid-template-columns: 1fr; gap: 10px; }
+  .postCard, .featuredCard { min-height: 0; padding: 18px; }
+  .featuredCard .cardIcon { width: 42px; height: 42px; font-size: 17px; }
+  .featuredCard .cardBody h2 { font-size: 21px; }
+  .featuredCard .cardBody p { font-size: 12px; }
+  .cardBody h2 { font-size: 16px; }
+  .journalNote { align-items: flex-start; padding: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blogHeader, .postGrid { animation: none; }
+  .postCard, .tagFilter button { transition: none; }
+}

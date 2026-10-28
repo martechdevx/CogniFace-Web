@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { apiAdminVerify, apiVerify } from "../../services/api.js";
 import {
-  FiUploadCloud, FiAlertTriangle, FiCheckCircle, FiXCircle,
-  FiShield, FiSearch, FiRefreshCw, FiInfo, FiX, FiLoader,
+  FiUploadCloud, FiAlertTriangle, FiCheckCircle, FiXCircle, FiArrowRight,
+  FiSearch, FiRefreshCw, FiInfo, FiX, FiLoader,
 } from "react-icons/fi";
 import styles from "./Verify.module.css";
 
@@ -20,15 +20,14 @@ function Verify({ adminMode = false }) {
 
   if (!isLoggedIn) {
     return (
-      <div className={styles.page} style={{ display:"flex", alignItems:"center", justifyContent:"center" }}>
-        <div style={{ maxWidth:440, width:"100%", textAlign:"center", padding:"60px 40px", background:"var(--card-bg)", border:"1px solid var(--border)", borderRadius:"var(--radius-xl)", backdropFilter:"blur(20px)", animation:"fadeUp 0.5s ease both" }}>
-          <div style={{ width:72, height:72, margin:"0 auto 28px", background:"linear-gradient(135deg,rgba(37,99,235,0.2),rgba(6,182,212,0.2))", border:"1px solid rgba(37,99,235,0.3)", borderRadius:20, display:"flex", alignItems:"center", justifyContent:"center" }}>
-            <FiSearch size={32} color="#60a5fa"/>
-          </div>
-          <h2 style={{ fontSize:26, fontFamily:"var(--font-display)", fontWeight:800, color:"white", marginBottom:12 }}>Access Restricted</h2>
-          <p style={{ fontSize:15, color:"var(--white-60)", marginBottom:32 }}>Log in to run face verification.</p>
-          <Link to="/login" className={styles.btnPrimary} style={{ display:"inline-flex", justifyContent:"center", padding:"12px 28px" }}>
-            <FiShield size={15}/> Log In
+      <div className={styles.accessPage}>
+        <div className={styles.accessCard}>
+          <span className={styles.accessIcon}><FiSearch /></span>
+          <span className={styles.accessEyebrow}>COGNIFACE WORKSPACE</span>
+          <h1>Sign in to continue</h1>
+          <p>Verification is available to signed-in workspace users.</p>
+          <Link to="/login" className={styles.accessButton}>
+            Log in <FiArrowRight />
           </Link>
         </div>
       </div>
@@ -59,20 +58,23 @@ function Verify({ adminMode = false }) {
   return (
     <div className={adminMode ? styles.adminPageEmbedded : styles.page}>
       {!adminMode && (
-        <>
+        <header className={styles.pageHeader}>
           <div className={styles.breadcrumb}>
             <Link to="/dashboard" className={styles.breadHome}>Dashboard</Link>
             <span className={styles.breadSep}>›</span>
             <span className={styles.breadCurrent}>Verification</span>
           </div>
-          <h1 className={styles.title}>Face Verification</h1>
-        </>
+          <h1 className={styles.title}>Identity Verification</h1>
+          <p className={styles.sub}>
+            Upload a photo to compare it with your enrolled face photos. The closest match and similarity score will be shown.
+          </p>
+        </header>
       )}
-      <p className={styles.sub}>
-        {adminMode
-          ? "Upload a photo to search across every enrolled face. The closest match and similarity score will be shown."
-          : "Upload a photo to compare it with your enrolled face photos. The closest match and similarity score will be shown."}
-      </p>
+      {adminMode && (
+        <p className={styles.sub}>
+          Upload a photo to search across every enrolled face. The closest match and similarity score will be shown.
+        </p>
+      )}
 
       <div className={styles.grid}>
         {/* Left */}

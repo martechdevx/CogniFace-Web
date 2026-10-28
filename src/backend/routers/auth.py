@@ -155,7 +155,7 @@ def logout(request: Request, response: Response, db: Session = Depends(get_db)):
             stored.revoked = True
             db.commit()
 
-    response.delete_cookie("access_token",  path="/")
+    response.delete_cookie("access_token", path="/")
     response.delete_cookie("refresh_token", path="/")
     return {"message": "Logged out."}
 

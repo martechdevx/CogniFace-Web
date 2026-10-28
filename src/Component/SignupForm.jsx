@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { apiSignup } from "../services/api";
 import { FiAlertTriangle, FiCheckCircle, FiEye, FiEyeOff, FiLoader, FiShield, FiPlus, FiZap, FiLock } from "react-icons/fi";
 import styles from "./SignupForm.module.css";
-import logo from "../assets/logo-white.png"
+import BrandLogo from "./BrandLogo.jsx";
 
 const SLOTS = [
   { angle:0,   filled:true  },
@@ -119,9 +119,7 @@ function SignUpForm() {
       {/* ── Left ── */}
       <div className={styles.left}>
         <Link to="/" className={styles.brand}>
-          {/* <div className={styles.logoMark}><FiShield color="white" size={18}/></div>
-          <span className={styles.brandName}>FaceID<span className={styles.brandAccent}>Pro</span></span> */}
-          <img src={logo} alt="Logo"></img>
+          <BrandLogo className={styles.brandLogo} />
         </Link>
 
         <h1 className={styles.heading}>Create your account</h1>

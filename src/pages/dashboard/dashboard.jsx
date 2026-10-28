@@ -11,14 +11,14 @@ import {
   apiUserProfile, apiUpdateUserPassword, apiUpdateUserProfile,
 } from "../../services/api";
 import {
-  FiUserPlus, FiSearch, FiFileText,
+  FiUserPlus, FiArrowRight, FiSearch, FiFileText,
   FiShield, FiCheckCircle, FiActivity, FiChevronRight,
   FiAlertCircle, FiRefreshCw, FiTrash2, FiUsers, FiUserCheck,
   FiGrid, FiDatabase, FiCpu, FiKey, FiList, FiLogOut, FiPlus, FiX, FiMoon, FiSun,
   FiChevronDown, FiSettings, FiSave, FiLock, FiUser, FiArrowLeft, FiCamera,
 } from "react-icons/fi";
 import styles from "./Dashboard.module.css";
-import logo from "../../assets/logo-white.png";
+import BrandLogo from "../../Component/BrandLogo.jsx";
 
 const BAR_DATA     = [40,65,45,80,60,90,55,75,85,70,95,78];
 const BAR_MONTHS   = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
@@ -467,7 +467,7 @@ function AdminDashboard({ user, logout, updateProfile }) {
   return (
     <div className={styles.adminFrame} data-theme={theme}>
       <aside className={styles.adminSidebar}>
-        <div className={styles.adminBrand}><img src={logo} alt="FACEIO"/><small>ADMINISTRATION</small></div>
+        <div className={styles.adminBrand}><BrandLogo alt="CogniFace" /><small>ADMINISTRATION</small></div>
         <button type="button" className={styles.adminThemeToggle} onClick={toggleTheme} aria-label={`Switch to ${theme === "light" ? "dark" : "light"} theme`} title={`Switch to ${theme === "light" ? "dark" : "light"} theme`}>
           {theme === "light" ? <FiMoon size={15}/> : <FiSun size={15}/>}<span>{theme === "light" ? "Dark theme" : "Light theme"}</span>
         </button>
@@ -528,8 +528,8 @@ function AdminDashboard({ user, logout, updateProfile }) {
             </div>
 
             <section className={styles.adminPanel}>
-              <div className={styles.adminPanelHeading}><div><h2>Latest audit events</h2><p>Recent platform events; login events are excluded</p></div><button type="button" onClick={() => setSection("activity")}>View audit log <FiChevronRight size={14}/></button></div>
-              <div className={styles.tableWrap}><table className={styles.accountsTable}><thead><tr><th>Event</th><th>Actor</th><th>Result</th><th>Date &amp; time</th></tr></thead><tbody>{renderActivityRows(activity.slice(0, 6))}</tbody></table></div>
+                <div className={styles.adminPanelHeading}><div><h2>Latest audit events</h2><p>Recent platform events; login events are excluded</p></div><button type="button" onClick={() => setSection("activity")}>View audit log <FiChevronRight size={14}/></button></div>
+                <div className={styles.tableWrap}><table className={styles.accountsTable}><thead><tr><th>Event</th><th>Actor</th><th>Result</th><th>Date &amp; time</th></tr></thead><tbody>{renderActivityRows(activity.slice(0, 6))}</tbody></table></div>
             </section>
           </div>
         )}
@@ -696,12 +696,15 @@ export default function Dashboard() {
 
   if (!isLoggedIn) {
     return (
-      <div className={styles.gateWrap}>
-        <div className={styles.gateBox}>
-          <div className={styles.gateIcon}><FiShield size={32} color="#60a5fa"/></div>
-          <h2 className={styles.gateTitle}>Access Restricted</h2>
-          <p className={styles.gateText}>You need to be logged in to view the dashboard.</p>
-          <Link to="/login" className={styles.gateBtn}><FiShield size={16}/> Log In</Link>
+      <div className={styles.accessPage}>
+        <div className={styles.accessCard}>
+          <span className={styles.accessIcon}><FiShield /></span>
+          <span className={styles.accessEyebrow}>COGNIFACE WORKSPACE</span>
+          <h1>Sign in to continue</h1>
+          <p>Your dashboard is available to signed-in workspace users.</p>
+          <Link to="/login" className={styles.accessButton}>
+            Log in <FiArrowRight />
+          </Link>
         </div>
       </div>
     );
@@ -750,8 +753,8 @@ export default function Dashboard() {
             <p className={styles.pageSub}>Face enrollment and verification activity</p>
           </div>
           <div className={styles.headerActions}>
-            <Link to="/enrollment"   className={styles.btnPrimary}><FiUserPlus size={14}/> Enroll Face</Link>
-            <Link to="/verification" className={styles.btnGhost}><FiSearch size={14}/> Verify Face</Link>
+            <Link to="/enrollment"   className={styles.btnPrimary}><FiUserPlus size={14}/> Enroll identity</Link>
+            <Link to="/verification" className={styles.btnGhost}><FiSearch size={14}/> Verify identity</Link>
             <button type="button" className={styles.btnGhost} onClick={() => setShowAccountSettings(true)}><FiSettings size={14}/> Account settings</button>
           </div>
         </div>

@@ -198,6 +198,7 @@
 .adminFrame { --admin-ink:#e7edf0; --admin-muted:#91a0a8; --admin-line:rgba(212,229,232,0.12); display:grid; grid-template-columns:232px minmax(0,1fr); width:100%; min-width:0; min-height:100vh; overflow:hidden; color:var(--admin-ink); background:radial-gradient(ellipse at 76% 0%,rgba(13,148,136,0.10),transparent 32%),#111719; }
 .adminSidebar { position:relative; display:flex; flex-direction:column; min-width:0; min-height:100vh; height:100%; padding:22px 14px 14px; border-right:1px solid var(--admin-line); background:#101719; }
 .adminBrand { display:flex; align-items:center; gap:9px; min-height:44px; padding:0 8px; }
+.adminBrand picture { display:block; }
 .adminBrand img { width:auto; height:25px; filter:var(--logo-filter); }
 .adminBrand small { display:block; margin-top:3px; color:#748589; font:700 8px var(--font-body); letter-spacing:1.2px; }
 .adminThemeToggle { display:flex; align-items:center; justify-content:flex-start; gap:9px; min-height:35px; margin:15px 2px 0; padding:0 10px; border:1px solid var(--admin-line); border-radius:5px; background:rgba(255,255,255,0.025); color:#a5b3b3; font-size:10px; font-weight:650; text-align:left; }
@@ -572,3 +573,1075 @@
   .activityItem { align-items:flex-start; }
   .activityTime { white-space:normal; text-align:right; }
 }
+
+.main {
+  width: min(100%, 1440px);
+  padding: 38px clamp(20px, 5vw, 72px) 68px;
+}
+
+.pageHeader {
+  position: relative;
+  align-items: flex-end;
+  margin: -38px calc(-1 * clamp(20px, 5vw, 72px)) 25px;
+  padding: 43px clamp(20px, 5vw, 72px) 27px;
+  border: 0;
+  background:
+    radial-gradient(ellipse at 87% 14%, rgb(21 94 239 / 24%), transparent 34%),
+    #08172d;
+}
+
+.pageTag {
+  color: #9dbcf7;
+  font-size: 9px;
+  letter-spacing: 1.4px;
+}
+
+.pageTitle {
+  color: #f5f8ff;
+  font-size: clamp(36px, 4vw, 49px);
+  font-weight: 500;
+  letter-spacing: -2px;
+}
+
+.pageSub {
+  color: #b7c5d9;
+  font-size: 12px;
+}
+
+.headerActions {
+  gap: 7px;
+}
+
+.headerActions .btnPrimary {
+  border: 1px solid #3777f6;
+  background: #155eef;
+  color: #fff;
+}
+
+.headerActions .btnGhost {
+  border-color: rgb(205 222 249 / 24%);
+  background: rgb(255 255 255 / 5%);
+  color: #e2eafa;
+}
+
+.headerActions .btnGhost:hover {
+  border-color: rgb(205 222 249 / 46%);
+  background: rgb(255 255 255 / 9%);
+}
+
+.statsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 11px;
+  margin-bottom: 15px;
+}
+
+.statCard,
+.card {
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.statCard {
+  padding: 17px 19px;
+}
+
+.statIcon {
+  border-radius: 6px;
+}
+
+.statValue {
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+.chartsRow {
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.bottomRow {
+  gap: 12px;
+}
+
+.card {
+  padding: 20px;
+}
+
+.cardTitle {
+  font-size: 13px;
+}
+
+.quickLink {
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.healthBox {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: var(--surface-soft);
+}
+
+.healthOk {
+  color: #16835d;
+}
+
+.activityIcon {
+  border-radius: 6px;
+}
+
+@media (max-width: 700px) {
+  .main {
+    padding: 0 16px 42px;
+  }
+
+  .pageHeader {
+    margin: 0 -16px 20px;
+    padding: 28px 16px 21px;
+  }
+
+  .pageTitle {
+    font-size: 35px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 420px) {
+  .main {
+    padding-inline: 12px;
+  }
+
+  .pageHeader {
+    margin-right: -12px;
+    margin-left: -12px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main {
+  width: min(100%, 1360px);
+  margin: 0 auto;
+  padding: 38px clamp(20px, 5vw, 72px) 68px;
+  color: var(--white);
+}
+
+.pageHeader {
+  align-items: flex-end;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 22px;
+}
+
+.pageTag { margin-bottom: 7px; color: var(--blue); font-size: 10px; letter-spacing: 1.15px; }
+.pageTitle { color: var(--white); font-size: clamp(29px, 3.4vw, 38px); font-weight: 650; letter-spacing: -1.2px; }
+.pageSub { color: var(--white-60); font-size: 13px; }
+.headerActions { flex-wrap: wrap; gap: 8px; }
+.btnPrimary, .btnGhost {
+  min-height: 39px;
+  padding: 8px 13px;
+  border-radius: 7px;
+  font-size: 12px;
+  box-shadow: none;
+}
+.btnPrimary { background: var(--blue); }
+.btnPrimary:hover { background: #0e4fd6; filter: none; transform: translateY(-1px); }
+.btnGhost { color: var(--white); background: var(--card-bg); }
+.btnGhost:hover { border-color: var(--border-2); background: var(--surface-soft); }
+
+.statsGrid { gap: 13px; margin-bottom: 16px; }
+.statCard, .card {
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: none;
+}
+.statCard { padding: 19px 20px; }
+.statCard:hover { transform: translateY(-2px); }
+.statTop { margin-bottom: 17px; }
+.statLabel { color: var(--white-60); font-size: 12px; font-weight: 550; }
+.statIcon { width: 34px; height: 34px; border-radius: 7px; }
+.statValue { margin-bottom: 5px; color: var(--white); font-size: 31px; font-weight: 650; }
+.statSub { color: var(--white-60); font-size: 11px; }
+.skeleton { border-radius: 5px; background: linear-gradient(90deg,var(--surface-soft),var(--surface-strong),var(--surface-soft)); }
+
+.chartsRow { grid-template-columns: minmax(0, 1.4fr) minmax(250px, .75fr); gap: 14px; margin-bottom: 14px; }
+.bottomRow { grid-template-columns: minmax(0, 1.35fr) minmax(260px, .75fr); gap: 14px; }
+.card { padding: 21px; }
+.cardTitle { color: var(--white); font-size: 14px; font-weight: 650; }
+.cardSub { margin-bottom: 16px; color: var(--white-60); font-size: 11px; }
+.cardTop { margin-bottom: 19px; }
+.tag { border: 1px solid rgba(21,94,239,.16); border-radius: 5px; background: rgba(21,94,239,.07); color: var(--blue); }
+.barChart { height: 62px; gap: 6px; }
+.bar { border-radius: 2px 2px 0 0; }
+.chartLabels { color: var(--white-60); font-size: 10px; }
+.infoBox { border-radius: 7px; }
+.infoBoxValue { color: var(--white); font-size: 22px; }
+.activityItem { gap: 10px; padding: 11px 0; border-color: var(--border); }
+.activityIcon { width: 32px; height: 32px; border-radius: 7px; }
+.activityText { color: var(--white); font-size: 12px; }
+.activityTime { color: var(--white-60); font-size: 10px; }
+.quickActions { gap: 8px; }
+.quickLink { padding: 11px; border-radius: 7px; background: var(--surface-soft); }
+.quickLink:hover { border-color: rgba(21,94,239,.2); background: rgba(21,94,239,.04); }
+.quickLinkTitle { color: var(--white); font-size: 12px; }
+.quickLinkSub { color: var(--white-60); font-size: 10px; }
+.quickLinkArrow { color: var(--white-60); }
+.healthBox { padding: 12px; border-radius: 7px; }
+.healthTitle { color: #21855a; font-size: 11px; }
+.healthRow { color: var(--white-60); font-size: 11px; }
+.healthOk { color: #21855a; }
+
+.userSettingsGrid { gap: 14px; }
+.userSettingsPanel { border-radius: 9px; box-shadow: var(--shadow-sm); }
+.userSettingsPanel > header { padding: 16px 18px; }
+.userSettingsPanel > header h2 { font-size: 14px; font-weight: 650; }
+.userSettingsIcon { border-radius: 6px; color: var(--blue); }
+.userSettingsForm { gap: 13px; padding: 18px; }
+.userSettingsError, .userSettingsNotice { border-radius: 7px; }
+
+.adminFrame {
+  --admin-ink: #eaf1fa;
+  --admin-muted: #9cacc1;
+  --admin-line: rgba(219,232,248,.12);
+  grid-template-columns: 248px minmax(0,1fr);
+  background: #111f34;
+}
+.adminSidebar { padding: 24px 16px 16px; border-color: var(--admin-line); background: #0e1b2e; }
+.adminBrand { min-height: 48px; }
+.adminBrand img { height: 34px; filter: none; }
+.adminBrand small { color: #89a0bd; }
+.adminThemeToggle { min-height: 38px; border-radius: 6px; color: #bac9dc; }
+.adminThemeToggle:hover { border-color: rgba(89,148,250,.42); color: #fff; }
+.adminNavLabel { margin: 31px 10px 11px; color: #8193aa; }
+.adminNav { gap: 5px; }
+.adminNavItem { min-height: 42px; border-radius: 6px; color: #acbbcf; }
+.adminNavItem:hover { background: rgba(255,255,255,.055); color: #fff; }
+.adminNavActive { border-color: rgba(79,142,245,.25); background: rgba(21,94,239,.18); color: #c8dcff; }
+.adminNavItem i { background: #78a8ff; }
+.adminSidebarFoot { border-color: var(--admin-line); }
+.adminAvatar { border-radius: 7px; background: rgba(21,94,239,.2); color: #c8dcff; }
+.adminSidebarUser strong { color: #e4ecf7; }
+.adminSidebarUser small { color: #9aabc1; }
+.adminLogout { color: #a9b7c8; }
+.adminLogout:hover { border-color: rgba(248,113,113,.2); background: rgba(127,29,29,.16); color: #ffb6b6; }
+.adminMain { padding-inline: clamp(20px, 3vw, 46px); }
+.adminTopbar { min-height: 88px; border-color: var(--admin-line); background: rgba(17,31,52,.94); }
+.adminBreadcrumb { color: #9aaac0; }
+.adminTopbar h1 { color: #f0f5fc; font-size: 22px; font-weight: 650; }
+.adminRefresh { width: 38px; height: 38px; border-radius: 7px; color: #b7c6d9; }
+.adminRefresh:hover:not(:disabled) { border-color: rgba(89,148,250,.45); color: #9fc2ff; }
+.adminPageContent { gap: 16px; }
+.adminWelcome { padding: 4px 1px 5px; }
+.adminWelcome > div > span { color: #83b1ff; }
+.adminWelcome h2 { color: #f1f5fb; font-size: 23px; font-weight: 650; }
+.adminWelcome p, .sectionIntro p { color: var(--admin-muted); }
+.liveIndicator { border-color: rgba(69,185,132,.22); background: rgba(25,139,92,.1); color: #9be0bb; }
+.adminMetrics { gap: 12px; }
+.adminMetric, .adminPanel, .systemCard {
+  border: 1px solid var(--admin-line);
+  border-radius: 8px;
+  background: rgba(255,255,255,.035);
+}
+.adminMetric { padding: 16px; }
+.adminMetricIcon { border-radius: 7px; background: rgba(21,94,239,.18); color: #8eb6ff; }
+.adminMetricLabel { color: #acbbcf; }
+.adminMetric strong { color: #f1f5fb; font-weight: 650; }
+.adminMetric small { color: #94a5bc; }
+.adminOverviewGrid { gap: 14px; }
+.adminPanelHeading { border-color: var(--admin-line); color: #b1c0d2; }
+.adminPanelHeading h2, .sectionIntro h2 { color: #eaf1fa; font-weight: 650; }
+.adminPanelHeading p { color: #9cacc1; }
+.adminPanelHeading > button { color: #95b9f4; }
+.adminPanelHeading > button:hover { color: #c5dcff; }
+.serviceRows > div, .securityRows > div, .configRows > div { border-color: var(--admin-line); }
+.serviceIcon { border-radius: 6px; background: rgba(255,255,255,.055); color: #b3c2d6; }
+.serviceRows strong { color: #e4ecf7; }
+.serviceRows small { color: #9caec2; }
+.statusOnline { color: #7bd5a6; }
+.statusOffline { color: #f2a0a0; }
+.statusNeutral { color: #b0bfd0; }
+.securityRows > div, .configRows > div { color: #b0bfd1; }
+.securityRows strong, .configRows b { color: #e2eaf5; }
+.eventType { color: #e1eaf6; }
+.auditDisclosure:hover .eventType { color: #a8c8ff; }
+.auditDisclosure > svg { color: #9aadc5; }
+.auditExpandedRow > td { background: rgba(255,255,255,.025); }
+.auditExpanded { border-color: #367de2; background: rgba(21,94,239,.08); }
+.auditExpanded > div > span { color: #9dacc0; }
+.auditExpanded > div > strong { color: #e3ebf7; }
+.adminNotice { border-radius: 7px; }
+.adminError { border-radius: 7px; }
+.adminPrimaryButton { min-height: 38px; border-color: var(--blue); border-radius: 6px; background: var(--blue); }
+.adminPrimaryButton:hover:not(:disabled) { background: #0e4fd6; }
+.accountCounts { color: #a8b8cd; }
+.accountCounts strong { color: #f0f5fc; }
+.accountSearch { height: 38px; border-radius: 6px; color: #9fb0c6; }
+.accountSearch:focus-within { border-color: rgba(89,148,250,.55); box-shadow: 0 0 0 3px rgba(21,94,239,.12); }
+.accountSearch input { color: #edf3fb; font-size: 11px; }
+.accountSearch input::placeholder { color: #94a6bc; }
+.accountsTable th, .enrollmentTable th { background: rgba(255,255,255,.035); color: #a2b3c9; }
+.accountsTable td, .enrollmentTable td { border-color: rgba(219,232,248,.09); }
+.accountsTable tbody tr:hover, .enrollmentTable tbody tr:not(.enrollmentExpandedRow):hover { background: rgba(255,255,255,.035); }
+.accountName { color: #eaf1fa; }
+.accountEmail, .joinDate { color: #a5b4c8; }
+.roleBadge { border-radius: 5px; }
+.roleAdmin { border-color: rgba(89,148,250,.24); background: rgba(21,94,239,.16); color: #b8d2ff; }
+.accountActions button { color: #a2b2c7; }
+.tableMessage, .tableFooter { color: #a0b0c5; }
+.tableFooter { border-color: var(--admin-line); }
+.systemIcon { border-color: rgba(89,148,250,.2); border-radius: 7px; background: rgba(21,94,239,.13); color: #91b9ff; }
+.systemCard small { color: #9caec2; }
+.systemCard h3 { color: #e8eff9; }
+.systemCard p { color: #a5b5c9; }
+.viewFacesButton { border-color: rgba(89,148,250,.24); border-radius: 5px; background: rgba(21,94,239,.12); color: #b1ccf8; }
+.viewFacesButton:hover { border-color: rgba(89,148,250,.45); background: rgba(21,94,239,.2); }
+.enrollmentImages figure { border-color: var(--admin-line); border-radius: 7px; background: rgba(255,255,255,.04); }
+.enrollmentImages img { background: #0c192c; }
+.enrollmentImages figcaption, .enrollmentImagesLoading { color: #afbdd0; }
+.enrollmentPagination { border-color: var(--admin-line); color: #adbbce; }
+.enrollmentPagination button { border-color: var(--admin-line); border-radius: 5px; color: #c2cede; }
+.enrollmentPagination button:hover:not(:disabled) { border-color: rgba(89,148,250,.44); color: #bdd3f9; }
+.configRows svg { color: #88aff0; }
+.settingsForm label { color: #c3cfdf; }
+.settingsForm input { border-color: var(--admin-line); border-radius: 6px; background: rgba(255,255,255,.045); color: #edf3fb; }
+.settingsForm input:focus { border-color: rgba(89,148,250,.6); box-shadow: 0 0 0 3px rgba(21,94,239,.13); }
+.settingsForm > p { color: #a4b4c8; }
+.adminModal { border-radius: 10px; }
+.adminModal > header { border-color: var(--admin-line); }
+.adminModal h2 { color: #eaf1fa; }
+.adminModal header p { color: #a2b2c7; }
+.adminModal header > button { color: #aebdd0; }
+.adminModal form > label { color: #c4d0df; }
+.grantHelp { color: #a2b2c7; }
+.adminModal form input { border-color: var(--admin-line); border-radius: 6px; background: rgba(255,255,255,.045); color: #edf3fb; }
+.adminModal form input:focus { border-color: rgba(89,148,250,.6); box-shadow: 0 0 0 3px rgba(21,94,239,.13); }
+.adminModal form input::placeholder { color: #91a3ba; }
+.adminCancelButton { border-color: var(--admin-line); border-radius: 6px; color: #c0ccdb; }
+
+.adminFrame[data-theme="light"] {
+  --admin-ink: #18283f;
+  --admin-muted: #64758c;
+  --admin-line: #e1e7ef;
+  color: #18283f;
+  background: #f6f8fb;
+}
+.adminFrame[data-theme="light"] .adminSidebar { border-color: var(--admin-line); background: #fff; }
+.adminFrame[data-theme="light"] .adminBrand small { color: #77869a; }
+.adminFrame[data-theme="light"] .adminThemeToggle { border-color: var(--admin-line); background: #f7f9fc; color: #566a84; }
+.adminFrame[data-theme="light"] .adminThemeToggle:hover { border-color: rgba(21,94,239,.26); color: var(--blue); }
+.adminFrame[data-theme="light"] .adminNavLabel { color: #8997aa; }
+.adminFrame[data-theme="light"] .adminNavItem { color: #566a84; }
+.adminFrame[data-theme="light"] .adminNavItem:hover { background: #f3f6fb; color: #1d314d; }
+.adminFrame[data-theme="light"] .adminNavActive { border-color: rgba(21,94,239,.12); background: #edf3ff; color: #1554bd; }
+.adminFrame[data-theme="light"] .adminNavItem i { background: var(--blue); }
+.adminFrame[data-theme="light"] .adminSidebarFoot { border-color: var(--admin-line); }
+.adminFrame[data-theme="light"] .adminAvatar { background: #e9f0ff; color: #1554bd; }
+.adminFrame[data-theme="light"] .adminSidebarUser strong { color: #20334e; }
+.adminFrame[data-theme="light"] .adminSidebarUser small { color: #77869a; }
+.adminFrame[data-theme="light"] .adminLogout { color: #65768d; }
+.adminFrame[data-theme="light"] .adminTopbar { border-color: var(--admin-line); background: rgba(246,248,251,.95); }
+.adminFrame[data-theme="light"] .adminBreadcrumb { color: #7a8aa0; }
+.adminFrame[data-theme="light"] .adminTopbar h1, .adminFrame[data-theme="light"] .adminWelcome h2 { color: #18283f; }
+.adminFrame[data-theme="light"] .adminRefresh { border-color: var(--admin-line); background: #fff; color: #607087; }
+.adminFrame[data-theme="light"] .adminRefresh:hover:not(:disabled) { border-color: rgba(21,94,239,.3); color: var(--blue); }
+.adminFrame[data-theme="light"] .adminWelcome > div > span { color: var(--blue); }
+.adminFrame[data-theme="light"] .adminWelcome p, .adminFrame[data-theme="light"] .sectionIntro p { color: #64758c; }
+.adminFrame[data-theme="light"] .liveIndicator { border-color: #ccebdc; background: #eff9f3; color: #24744d; }
+.adminFrame[data-theme="light"] .adminMetric,
+.adminFrame[data-theme="light"] .adminPanel,
+.adminFrame[data-theme="light"] .systemCard { border-color: var(--admin-line); background: #fff; box-shadow: 0 3px 12px rgba(26,55,80,.035); }
+.adminFrame[data-theme="light"] .adminMetricIcon { background: #edf3ff; color: #1554bd; }
+.adminFrame[data-theme="light"] .adminMetricLabel { color: #64758c; }
+.adminFrame[data-theme="light"] .adminMetric strong { color: #18283f; }
+.adminFrame[data-theme="light"] .adminMetric small { color: #78889d; }
+.adminFrame[data-theme="light"] .adminPanelHeading { border-color: var(--admin-line); color: #566a84; }
+.adminFrame[data-theme="light"] .adminPanelHeading h2, .adminFrame[data-theme="light"] .sectionIntro h2 { color: #20334e; }
+.adminFrame[data-theme="light"] .adminPanelHeading p { color: #718198; }
+.adminFrame[data-theme="light"] .adminPanelHeading > button { color: #1554bd; }
+.adminFrame[data-theme="light"] .serviceRows > div,
+.adminFrame[data-theme="light"] .securityRows > div,
+.adminFrame[data-theme="light"] .configRows > div { border-color: rgba(24,40,63,.09); }
+.adminFrame[data-theme="light"] .serviceIcon { background: #f2f5fa; color: #526882; }
+.adminFrame[data-theme="light"] .serviceRows strong { color: #263d5a; }
+.adminFrame[data-theme="light"] .serviceRows small { color: #78889d; }
+.adminFrame[data-theme="light"] .securityRows > div, .adminFrame[data-theme="light"] .configRows > div { color: #607087; }
+.adminFrame[data-theme="light"] .securityRows strong, .adminFrame[data-theme="light"] .configRows b { color: #263d5a; }
+.adminFrame[data-theme="light"] .eventType { color: #2d4360; }
+.adminFrame[data-theme="light"] .auditDisclosure > svg { color: #8291a4; }
+.adminFrame[data-theme="light"] .auditExpandedRow > td { background: #f7f9fc; }
+.adminFrame[data-theme="light"] .auditExpanded { border-color: #3977d4; background: #f0f5ff; }
+.adminFrame[data-theme="light"] .auditExpanded > div > span { color: #607087; }
+.adminFrame[data-theme="light"] .auditExpanded > div > strong { color: #263d5a; }
+.adminFrame[data-theme="light"] .adminPrimaryButton { border-color: var(--blue); background: var(--blue); color: #fff; }
+.adminFrame[data-theme="light"] .accountCounts { color: #687a91; }
+.adminFrame[data-theme="light"] .accountCounts strong { color: #20334e; }
+.adminFrame[data-theme="light"] .accountSearch { border-color: var(--admin-line); color: #73839a; }
+.adminFrame[data-theme="light"] .accountSearch input { color: #20334e; }
+.adminFrame[data-theme="light"] .accountSearch input::placeholder { color: #8997aa; }
+.adminFrame[data-theme="light"] .accountsTable th, .adminFrame[data-theme="light"] .enrollmentTable th { border-color: var(--admin-line); background: #f6f8fb; color: #65768c; }
+.adminFrame[data-theme="light"] .accountsTable td, .adminFrame[data-theme="light"] .enrollmentTable td { border-color: rgba(24,40,63,.08); }
+.adminFrame[data-theme="light"] .accountsTable tbody tr:hover, .adminFrame[data-theme="light"] .enrollmentTable tbody tr:not(.enrollmentExpandedRow):hover { background: #f7f9fc; }
+.adminFrame[data-theme="light"] .accountName { color: #263d5a; }
+.adminFrame[data-theme="light"] .accountEmail, .adminFrame[data-theme="light"] .joinDate { color: #6b7d93; }
+.adminFrame[data-theme="light"] .roleBadge { border-color: rgba(86,106,132,.18); background: #f2f5f9; color: #536780; }
+.adminFrame[data-theme="light"] .roleAdmin { border-color: rgba(21,94,239,.16); background: #edf3ff; color: #1554bd; }
+.adminFrame[data-theme="light"] .accountActions button { color: #708198; }
+.adminFrame[data-theme="light"] .tableMessage, .adminFrame[data-theme="light"] .tableFooter { color: #718198; }
+.adminFrame[data-theme="light"] .tableFooter { border-color: var(--admin-line); }
+.adminFrame[data-theme="light"] .systemIcon { border-color: #dce8fc; background: #edf3ff; color: #1554bd; }
+.adminFrame[data-theme="light"] .systemCard small { color: #74849a; }
+.adminFrame[data-theme="light"] .systemCard h3 { color: #263d5a; }
+.adminFrame[data-theme="light"] .systemCard p { color: #687a91; }
+.adminFrame[data-theme="light"] .viewFacesButton { border-color: #dbe6f8; background: #f0f5ff; color: #1554bd; }
+.adminFrame[data-theme="light"] .enrollmentImages figure { border-color: var(--admin-line); background: #fff; }
+.adminFrame[data-theme="light"] .enrollmentImages img { background: #f1f4f8; }
+.adminFrame[data-theme="light"] .enrollmentImages figcaption, .adminFrame[data-theme="light"] .enrollmentImagesLoading { color: #64758c; }
+.adminFrame[data-theme="light"] .enrollmentPagination { border-color: var(--admin-line); color: #64758c; }
+.adminFrame[data-theme="light"] .enrollmentPagination button { border-color: var(--admin-line); color: #536780; }
+.adminFrame[data-theme="light"] .enrollmentPagination button:hover:not(:disabled) { color: #1554bd; }
+.adminFrame[data-theme="light"] .configRows svg { color: #3977d4; }
+.adminFrame[data-theme="light"] .settingsForm label { color: #536780; }
+.adminFrame[data-theme="light"] .settingsForm input,
+.adminFrame[data-theme="light"] .adminModal form input { border-color: var(--admin-line); background: #fbfcfe; color: #20334e; }
+.adminFrame[data-theme="light"] .settingsForm input:focus,
+.adminFrame[data-theme="light"] .adminModal form input:focus { border-color: rgba(21,94,239,.45); box-shadow: 0 0 0 3px rgba(21,94,239,.1); }
+.adminFrame[data-theme="light"] .settingsForm > p { color: #718198; }
+.adminFrame[data-theme="light"] .adminModal { border-color: var(--admin-line); background: #fff; box-shadow: 0 28px 80px rgba(27,53,80,.18); }
+.adminFrame[data-theme="light"] .adminModal > header { border-color: var(--admin-line); }
+.adminFrame[data-theme="light"] .adminModal h2 { color: #20334e; }
+.adminFrame[data-theme="light"] .adminModal header p { color: #718198; }
+.adminFrame[data-theme="light"] .adminModal header > button { color: #65768c; }
+.adminFrame[data-theme="light"] .adminModal form > label { color: #536780; }
+.adminFrame[data-theme="light"] .grantHelp { color: #718198; }
+.adminFrame[data-theme="light"] .adminCancelButton { border-color: var(--admin-line); color: #536780; }
+
+.adminFrame[data-theme="dark"] {
+  --admin-ink: #edf3fb;
+  --admin-muted: #a4b2c5;
+  --admin-line: rgba(219,232,248,.13);
+  background: #111f34;
+}
+
+@media (max-width: 900px) {
+  .main { padding: 30px 24px 48px; }
+  .chartsRow { grid-template-columns: 1fr; }
+  .bottomRow { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .main { padding: 27px 16px 45px; }
+  .pageHeader { align-items: flex-start; }
+  .pageTitle { font-size: 27px; }
+  .headerActions { width: 100%; }
+  .headerActions > a, .headerActions > button { min-height: 40px; }
+  .statsGrid { grid-template-columns: 1fr; }
+  .chartsRow, .bottomRow { grid-template-columns: 1fr; }
+  .card { padding: 18px 16px; }
+  .userSettingsGrid { grid-template-columns: 1fr; }
+  .adminFrame { grid-template-columns: 1fr; }
+  .adminSidebar { padding: 10px 12px; }
+  .adminMain { padding: 0 14px 36px; }
+  .adminTopbar { margin-inline: -14px; }
+  .adminMetrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adminPageContent, .statsGrid, .chartsRow, .bottomRow { animation: none; }
+  .statCard, .quickLink { transition: none; }
+}
+
+.main {
+  width: min(100%, 1440px);
+  padding: 38px clamp(20px, 5vw, 72px) 68px;
+}
+
+.main > .pageHeader {
+  position: relative;
+  margin: -38px calc(-1 * clamp(20px, 5vw, 72px)) 25px;
+  padding: 43px clamp(20px, 5vw, 72px) 27px;
+  border: 0;
+  background:
+    radial-gradient(ellipse at 87% 14%, rgb(21 94 239 / 24%), transparent 34%),
+    #08172d;
+}
+
+.main > .pageHeader .pageTag { color: #9dbcf7; }
+.main > .pageHeader .pageTitle { color: #f5f8ff; font-size: clamp(36px, 4vw, 49px); font-weight: 500; letter-spacing: -2px; }
+.main > .pageHeader .pageSub { color: #b7c5d9; }
+.main > .pageHeader .headerActions { gap: 7px; }
+.main > .pageHeader .btnPrimary { border: 1px solid #3777f6; background: #155eef; color: #fff; }
+.main > .pageHeader .btnGhost { border-color: rgb(205 222 249 / 24%); background: rgb(255 255 255 / 5%); color: #e2eafa; }
+.main > .pageHeader .btnGhost:hover { border-color: rgb(205 222 249 / 46%); background: rgb(255 255 255 / 9%); }
+.main > .statsGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 11px; margin-bottom: 15px; }
+.main .statCard,
+.main .card { border-radius: 6px; box-shadow: none; }
+.main .statCard { padding: 17px 19px; }
+.main .statIcon,
+.main .activityIcon { border-radius: 6px; }
+.main .statValue { font-size: 32px; letter-spacing: -1px; }
+.main .chartsRow,
+.main .bottomRow { gap: 12px; }
+.main .chartsRow { margin-bottom: 12px; }
+.main .card { padding: 20px; }
+.main .cardTitle { font-size: 13px; }
+.main .quickLink { border: 1px solid transparent; border-radius: 5px; }
+.main .healthBox { border: 1px solid var(--border); border-radius: 5px; background: var(--surface-soft); }
+.main .healthOk { color: #16835d; }
+
+@media (max-width: 700px) {
+  .main { padding: 0 16px 42px; }
+  .main > .pageHeader { align-items: flex-start; margin: 0 -16px 20px; padding: 28px 16px 21px; }
+  .main > .pageHeader .pageTitle { font-size: 35px; }
+  .main > .statsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 420px) {
+  .main { padding-right: 12px; padding-left: 12px; }
+  .main > .pageHeader { margin-right: -12px; margin-left: -12px; padding-right: 12px; padding-left: 12px; }
+  .main > .statsGrid { grid-template-columns: 1fr; }
+}
+
+.accessPage {
+  min-height: calc(100vh - var(--nav-h));
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgb(21 94 239 / 10%), transparent 42%),
+    #f6f8fb;
+}
+
+.accessCard {
+  width: min(460px, 100%);
+  padding: 39px;
+  border: 1px solid #dfe6f0;
+  border-top: 2px solid #155eef;
+  background: #fff;
+  box-shadow: 0 24px 75px rgb(22 43 75 / 10%);
+  animation: fadeUp 420ms ease both;
+}
+
+.accessIcon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  background: #edf3ff;
+  color: #155eef;
+  font-size: 17px;
+}
+
+.accessEyebrow {
+  color: #155eef;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.accessCard h1 {
+  margin-top: 11px;
+  color: #13233d;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.accessCard p {
+  margin-top: 9px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.accessButton {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 0 15px;
+  background: #155eef;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 420px) {
+  .accessCard { padding: 29px 24px; }
+  .accessCard h1 { font-size: 26px; }
+}
+
+/* Admin console visual refresh */
+.adminFrame {
+  --admin-accent: #155eef;
+  --admin-accent-soft: rgba(21, 94, 239, 0.1);
+}
+
+.adminFrame[data-theme="light"] {
+  --admin-ink: #172b4d;
+  --admin-muted: #64748b;
+  --admin-line: #e3eaf3;
+  background: #f5f8fc;
+}
+
+.adminFrame[data-theme="dark"] {
+  --admin-accent: #5b91ff;
+  --admin-accent-soft: rgba(91, 145, 255, 0.14);
+  --admin-line: rgba(190, 208, 235, 0.13);
+  background: #0b1424;
+}
+
+.adminSidebar {
+  padding: 20px 16px 16px;
+  background: #fff;
+}
+
+.adminBrand {
+  min-height: 48px;
+  gap: 9px;
+  padding: 0 11px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9px;
+  background: linear-gradient(115deg, #102347, #123b70);
+}
+
+.adminBrand img {
+  height: 24px;
+  flex: 0 1 auto;
+  filter: none;
+}
+
+.adminBrand small {
+  margin: 0 0 0 auto;
+  color: #b7c9e6;
+  font-size: 7px;
+  letter-spacing: 0.9px;
+  white-space: nowrap;
+}
+
+.adminThemeToggle {
+  min-height: 38px;
+  margin-top: 16px;
+  border-radius: 7px;
+  background: #f8faff;
+  color: #52647e;
+}
+
+.adminNavLabel {
+  margin-top: 28px;
+  color: #8795a9;
+}
+
+.adminNav {
+  gap: 5px;
+}
+
+.adminNavItem {
+  min-height: 40px;
+  border-radius: 7px;
+  color: #53647b;
+}
+
+.adminNavItem:hover {
+  background: #f1f5fb;
+  color: #1d355b;
+}
+
+.adminNavActive {
+  border-color: rgba(21, 94, 239, 0.15);
+  background: #edf3ff;
+  color: #174eae;
+}
+
+.adminNavActive i {
+  background: var(--admin-accent);
+}
+
+.adminSidebarFoot {
+  padding-top: 14px;
+}
+
+.adminAvatar {
+  border-radius: 50%;
+}
+
+.adminTopbar {
+  min-height: 82px;
+  border-color: var(--admin-line);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.adminBreadcrumb {
+  color: #71819a;
+}
+
+.adminTopbar h1 {
+  color: #172b4d;
+  font-size: 21px;
+  letter-spacing: -0.3px;
+}
+
+.adminRefresh {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #fff;
+  color: #52647e;
+  box-shadow: 0 2px 6px rgba(27, 54, 91, 0.05);
+}
+
+.adminRefresh:hover:not(:disabled) {
+  border-color: rgba(21, 94, 239, 0.35);
+  color: var(--admin-accent);
+}
+
+.adminPageContent {
+  gap: 20px;
+}
+
+.adminWelcome {
+  min-height: 118px;
+  padding: 22px 24px;
+  border: 1px solid #e1e9f4;
+  border-left: 3px solid #155eef;
+  border-radius: 11px;
+  background: linear-gradient(110deg, #fff 54%, #f1f6ff);
+  box-shadow: 0 5px 18px rgba(26, 55, 96, 0.035);
+}
+
+.adminWelcome > div > span {
+  color: #155eef;
+}
+
+.adminWelcome h2 {
+  color: #172b4d;
+  letter-spacing: -0.4px;
+}
+
+.adminWelcome p,
+.sectionIntro p {
+  color: #687a93;
+}
+
+.liveIndicator {
+  border-color: rgba(21, 94, 239, 0.14);
+  background: #edf4ff;
+  color: #275bab;
+}
+
+.adminMetrics {
+  gap: 14px;
+}
+
+.adminMetric {
+  min-height: 92px;
+  padding: 17px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(26, 55, 96, 0.035);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.adminMetric:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(26, 55, 96, 0.08);
+}
+
+.adminMetricIcon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #edf3ff;
+  color: #155eef;
+}
+
+.adminMetricLabel {
+  color: #61728a;
+}
+
+.adminMetric strong {
+  color: #172b4d;
+}
+
+.adminMetric small {
+  color: #8290a4;
+}
+
+.adminOverviewGrid {
+  gap: 16px;
+}
+
+.adminPanel {
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(26, 55, 96, 0.035);
+}
+
+.adminPanelHeading {
+  min-height: 66px;
+  padding-inline: 19px;
+  border-color: #e9eef5;
+  color: #64748b;
+}
+
+.adminPanelHeading h2,
+.sectionIntro h2 {
+  color: #1e3457;
+  font-size: 13px;
+}
+
+.adminPanelHeading p {
+  color: #7a8aa0;
+}
+
+.adminPanelHeading > button {
+  color: #155eef;
+}
+
+.adminPanelHeading > button:hover {
+  color: #0f49bb;
+}
+
+.adminNotice,
+.adminError {
+  border-radius: 8px;
+}
+
+.adminPrimaryButton {
+  min-height: 38px;
+  border-color: #155eef;
+  border-radius: 7px;
+  background: #155eef;
+  box-shadow: 0 3px 8px rgba(21, 94, 239, 0.18);
+}
+
+.adminPrimaryButton:hover:not(:disabled) {
+  background: #0f4fcf;
+}
+
+.accountSearch {
+  border-radius: 7px;
+}
+
+.accountSearch:focus-within {
+  border-color: rgba(21, 94, 239, 0.45);
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.09);
+}
+
+.adminFrame[data-theme="light"] .adminSidebar {
+  border-color: #e3eaf3;
+  background: #fff;
+}
+
+.adminFrame[data-theme="light"] .adminBrand small {
+  color: #b7c9e6;
+}
+
+.adminFrame[data-theme="light"] .adminThemeToggle {
+  border-color: #e3eaf3;
+  background: #f8faff;
+  color: #52647e;
+}
+
+.adminFrame[data-theme="light"] .adminThemeToggle:hover {
+  border-color: rgba(21, 94, 239, 0.25);
+  color: #174eae;
+}
+
+.adminFrame[data-theme="light"] .adminNavLabel {
+  color: #8795a9;
+}
+
+.adminFrame[data-theme="light"] .adminNavItem:hover {
+  background: #f1f5fb;
+  color: #1d355b;
+}
+
+.adminFrame[data-theme="light"] .adminNavActive {
+  border-color: rgba(21, 94, 239, 0.15);
+  background: #edf3ff;
+  color: #174eae;
+}
+
+.adminFrame[data-theme="light"] .adminSidebarFoot {
+  border-color: #e3eaf3;
+}
+
+.adminFrame[data-theme="light"] .adminTopbar {
+  border-color: #e3eaf3;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.adminFrame[data-theme="light"] .adminTopbar h1,
+.adminFrame[data-theme="light"] .adminWelcome h2 {
+  color: #172b4d;
+}
+
+.adminFrame[data-theme="light"] .adminWelcome {
+  border-color: #e1e9f4;
+  border-left-color: #155eef;
+  background: linear-gradient(110deg, #fff 54%, #f1f6ff);
+}
+
+.adminFrame[data-theme="light"] .adminMetric,
+.adminFrame[data-theme="light"] .adminPanel {
+  border-color: #e3eaf3;
+  background: #fff;
+  box-shadow: 0 3px 12px rgba(26, 55, 96, 0.035);
+}
+
+.adminFrame[data-theme="light"] .adminMetricIcon {
+  background: #edf3ff;
+  color: #155eef;
+}
+
+.adminFrame[data-theme="light"] .adminMetricLabel {
+  color: #61728a;
+}
+
+.adminFrame[data-theme="light"] .adminMetric strong {
+  color: #172b4d;
+}
+
+.adminFrame[data-theme="light"] .adminMetric small {
+  color: #8290a4;
+}
+
+.adminFrame[data-theme="light"] .adminPanelHeading {
+  border-color: #e9eef5;
+}
+
+.adminFrame[data-theme="light"] .adminPanelHeading h2,
+.adminFrame[data-theme="light"] .sectionIntro h2 {
+  color: #1e3457;
+}
+
+.adminFrame[data-theme="light"] .adminPanelHeading > button {
+  color: #155eef;
+}
+
+.adminFrame[data-theme="light"] .adminRefresh {
+  border-color: #e3eaf3;
+  background: #fff;
+  color: #52647e;
+}
+
+.adminFrame[data-theme="light"] .adminRefresh:hover:not(:disabled) {
+  border-color: rgba(21, 94, 239, 0.35);
+  color: #155eef;
+}
+
+.adminFrame[data-theme="light"] .liveIndicator {
+  border-color: rgba(21, 94, 239, 0.14);
+  background: #edf4ff;
+  color: #275bab;
+}
+
+.adminFrame[data-theme="light"] .adminPrimaryButton {
+  border-color: #155eef;
+  background: #155eef;
+  color: #fff;
+}
+
+.adminFrame[data-theme="light"] .adminPrimaryButton:hover:not(:disabled) {
+  background: #0f4fcf;
+}
+
+.adminFrame[data-theme="light"] .accountSearch:focus-within {
+  border-color: rgba(21, 94, 239, 0.45);
+  box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.09);
+}
+
+.adminFrame[data-theme="dark"] .adminSidebar {
+  border-color: var(--admin-line);
+  background: #0c1729;
+}
+
+.adminFrame[data-theme="dark"] .adminBrand {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.adminFrame[data-theme="dark"] .adminThemeToggle {
+  border-color: var(--admin-line);
+  background: rgba(255, 255, 255, 0.035);
+  color: #b1c0d3;
+}
+
+.adminFrame[data-theme="dark"] .adminNavActive {
+  border-color: rgba(91, 145, 255, 0.25);
+  background: rgba(91, 145, 255, 0.13);
+  color: #a9c7ff;
+}
+
+.adminFrame[data-theme="dark"] .adminTopbar {
+  background: rgba(11, 20, 36, 0.94);
+}
+
+.adminFrame[data-theme="dark"] .adminWelcome {
+  border-color: rgba(153, 183, 230, 0.14);
+  border-left-color: #5b91ff;
+  background: linear-gradient(110deg, #111f35 54%, #132747);
+}
+
+.adminFrame[data-theme="dark"] .adminMetric,
+.adminFrame[data-theme="dark"] .adminPanel {
+  border-color: var(--admin-line);
+  background: #111f35;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.adminFrame[data-theme="dark"] .adminMetricIcon {
+  background: rgba(91, 145, 255, 0.15);
+  color: #8db4ff;
+}
+
+.adminFrame[data-theme="dark"] .adminPanelHeading > button,
+.adminFrame[data-theme="dark"] .adminRefresh:hover:not(:disabled) {
+  color: #8db4ff;
+}
+
+.adminFrame[data-theme="dark"] .adminPrimaryButton {
+  border-color: #3978e7;
+  background: #2867d8;
+}
+
+.adminFrame[data-theme="dark"] .adminPrimaryButton:hover:not(:disabled) {
+  background: #3478ef;
+}
+
+@media (max-width: 700px) {
+  .adminSidebar {
+    padding: 10px 12px;
+  }
+
+  .adminBrand {
+    width: fit-content;
+    min-width: min(220px, 100%);
+    padding-inline: 10px;
+  }
+
+  .adminBrand img {
+    height: 22px;
+  }
+
+  .adminWelcome {
+    padding: 18px;
+  }
+
+  .adminMetric {
+    min-height: 84px;
+    padding: 11px;
+  }
+}
+

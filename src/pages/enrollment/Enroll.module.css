@@ -358,3 +358,368 @@
   .slotProcessingMessage span { font-size:10px; }
   .enrollmentStatusCard { padding:28px 20px; }
 }
+
+.pageWrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 38px clamp(20px, 5vw, 72px) 72px;
+  color: var(--white);
+}
+
+.pageHeader {
+  margin-bottom: 25px;
+  animation: enrollmentEnter 420ms ease both;
+}
+
+.breadcrumb { gap: 9px; margin-bottom: 13px; }
+.breadHome, .breadSep, .breadCurrent { font-size: 12px; }
+.breadHome { color: var(--white-60); }
+.breadHome:hover { color: var(--blue); }
+.breadCurrent { color: var(--blue); }
+
+.title {
+  margin-bottom: 9px;
+  color: var(--white);
+  font-size: clamp(29px, 3.4vw, 39px);
+  font-weight: 650;
+  letter-spacing: -1.2px;
+}
+
+.subtitle { max-width: 600px; color: var(--white-60); font-size: 14px; }
+
+.progressCard {
+  margin-bottom: 18px;
+  padding: 19px 22px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: none;
+}
+
+.progressLabel { color: var(--white); font-size: 12px; font-weight: 600; }
+.progressValue { color: var(--blue); font-size: 12px; }
+.progressTrack { height: 5px; background: var(--surface-soft); }
+.progressFill { background: linear-gradient(90deg, var(--blue), #4c92f2); }
+.progressSteps { gap: 22px; margin-top: 13px; }
+.progressStep { color: var(--white-60); font-size: 11px; }
+.progressStepDone { color: #21855a; }
+
+.mainGrid {
+  grid-template-columns: minmax(0, 1.15fr) minmax(290px, .75fr);
+  gap: 18px;
+  animation: enrollmentEnter 480ms 70ms ease both;
+}
+
+.formCard {
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: none;
+}
+
+.form { gap: 26px; }
+.sectionLabel { color: var(--white-60); font-size: 10px; letter-spacing: 1.1px; }
+.personalGrid { gap: 17px 14px; }
+.label { color: var(--white); font-size: 12px; }
+
+.inputField {
+  min-height: 43px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-2);
+  border-radius: 6px;
+  background: var(--card-bg) !important;
+  color: var(--white);
+  color-scheme: light;
+  font-size: 13px;
+  transition: border-color .16s ease, box-shadow .16s ease;
+}
+
+:global(:root[data-theme="dark"]) .inputField { color-scheme: dark; }
+.inputField:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(21,94,239,.12); }
+.inputField:has(option) { border-radius: 6px; }
+.inputField:has(option):focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(21,94,239,.12); }
+
+.slotStage { border-radius: 8px; }
+.slotStageLoading .slotGrid { transition: filter .2s ease, opacity .2s ease; }
+.slotProcessingOverlay {
+  border-color: rgba(21,94,239,.2);
+  border-radius: 8px;
+  background: rgba(18,35,60,.18);
+  backdrop-filter: blur(4px);
+}
+.slotScanBeam {
+  background: linear-gradient(180deg,transparent,rgba(21,94,239,.08),rgba(21,94,239,.16),transparent);
+  border-color: rgba(21,94,239,.35);
+  box-shadow: 0 5px 22px rgba(21,94,239,.14);
+}
+.slotProcessingMessage {
+  border-color: rgba(21,94,239,.18);
+  border-radius: 7px;
+  background: var(--card-bg);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+.slotProcessingMessage > svg { color: var(--blue); }
+.slotProcessingMessage span { color: var(--white-60); }
+
+.enrollmentStatusPage {
+  min-height: calc(100vh - var(--nav-h));
+  padding: 38px 20px;
+  animation: enrollmentEnter 400ms ease both;
+}
+.enrollmentStatusCard {
+  gap: 15px;
+  max-width: 540px;
+  padding: 38px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.enrollmentStatusCard h1 { font-size: 26px; font-weight: 650; letter-spacing: -.5px; }
+.enrollmentStatusCard p { font-size: 13px; }
+.enrollmentStatusSuccess { border-radius: 10px; }
+.enrollmentStatusEyebrow { color: var(--blue); }
+.enrollmentStatusSpinner { color: var(--blue); }
+
+@keyframes enrollmentEnter {
+  from { opacity: 0; transform: translateY(9px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .mainGrid { grid-template-columns: minmax(0, 1fr) 300px; }
+}
+
+@media (max-width: 700px) {
+  .pageWrap { padding: 27px 16px 48px !important; }
+  .progressCard { padding: 15px 16px !important; }
+  .mainGrid { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .formCard { padding: 22px 18px !important; }
+  .personalGrid { grid-template-columns: 1fr 1fr !important; gap: 14px 10px !important; }
+  .personalGrid > div { grid-column: auto !important; }
+  .personalGrid > .fullWidth { grid-column: 1 / -1 !important; }
+}
+
+@media (max-width: 420px) {
+  .progressSteps { gap: 8px 13px; }
+  .progressStep { font-size: 10px; }
+  .personalGrid { grid-template-columns: 1fr !important; }
+  .personalGrid > div { grid-column: 1 / -1 !important; }
+  .enrollmentStatusCard { padding: 27px 19px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pageHeader, .mainGrid, .enrollmentStatusPage { animation: none; }
+}
+
+.pageWrap {
+  max-width: none;
+  padding: 0 0 72px;
+}
+
+.pageWrap > .container {
+  max-width: none;
+}
+
+.pageHeader {
+  margin: 0;
+  padding: 48px max(6vw, calc((100vw - 1280px) / 2)) 50px;
+  background:
+    radial-gradient(ellipse at 86% 20%, rgb(21 94 239 / 24%), transparent 34%),
+    #08172d;
+}
+
+.breadHome,
+.breadSep {
+  color: #a4b4ca;
+}
+
+.breadCurrent {
+  color: #93b4f7;
+}
+
+.title {
+  max-width: 700px;
+  margin-top: 21px;
+  color: #f5f8ff;
+  font-size: clamp(42px, 5vw, 64px);
+  font-weight: 500;
+  letter-spacing: -3px;
+}
+
+.subtitle {
+  max-width: 590px;
+  color: #b7c5d9;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.progressCard,
+.mainGrid {
+  width: min(1280px, 88%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.progressCard {
+  margin-top: 28px;
+  margin-bottom: 20px;
+  padding: 17px 20px;
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.mainGrid {
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
+  gap: 20px;
+}
+
+.formCard {
+  border-radius: 6px;
+  box-shadow: none;
+}
+
+.form {
+  gap: 30px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--blue);
+}
+
+.sectionLabel::before {
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  content: "";
+}
+
+.inputField {
+  border-radius: 5px;
+}
+
+.enrollmentStatusPage {
+  background:
+    radial-gradient(ellipse at 50% 25%, rgb(21 94 239 / 9%), transparent 38%),
+    var(--navy);
+}
+
+.enrollmentStatusCard {
+  border-radius: 6px;
+  box-shadow: 0 20px 70px rgb(16 35 63 / 10%);
+}
+
+@media (max-width: 900px) {
+  .mainGrid {
+    grid-template-columns: minmax(0, 1fr) minmax(270px, .82fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .pageWrap {
+    padding-bottom: 48px !important;
+  }
+
+  .pageHeader {
+    padding: 35px 22px 38px;
+  }
+
+  .title {
+    margin-top: 17px;
+    font-size: 44px;
+    letter-spacing: -2px;
+  }
+
+  .progressCard,
+  .mainGrid {
+    width: calc(100% - 32px);
+  }
+
+  .progressCard {
+    margin-top: 17px;
+  }
+}
+
+@media (max-width: 420px) {
+  .progressCard,
+  .mainGrid {
+    width: calc(100% - 26px);
+  }
+}
+
+.accessPage {
+  min-height: calc(100vh - var(--nav-h));
+  display: grid;
+  place-items: center;
+  padding: 40px 20px;
+  background:
+    radial-gradient(ellipse at 50% 30%, rgb(21 94 239 / 10%), transparent 42%),
+    #f6f8fb;
+}
+
+.accessCard {
+  width: min(460px, 100%);
+  padding: 39px;
+  border: 1px solid #dfe6f0;
+  border-top: 2px solid #155eef;
+  background: #fff;
+  box-shadow: 0 24px 75px rgb(22 43 75 / 10%);
+  animation: enrollmentEnter 420ms ease both;
+}
+
+.accessIcon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 25px;
+  background: #edf3ff;
+  color: #155eef;
+  font-size: 17px;
+}
+
+.accessEyebrow {
+  color: #155eef;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.accessCard h1 {
+  margin-top: 11px;
+  color: #13233d;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+.accessCard p {
+  margin-top: 9px;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.accessButton {
+  min-height: 43px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 0 15px;
+  background: #155eef;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 420px) {
+  .accessCard { padding: 29px 24px; }
+  .accessCard h1 { font-size: 26px; }
+}

@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext.jsx";
 import { useState, useEffect } from "react";
 import { FiLogOut, FiMenu, FiMoon, FiSun, FiX } from "react-icons/fi";
 import styles from "./NavBar.module.css";
-import logo from "../assets/logo-white.png"
+import BrandLogo from "./BrandLogo.jsx";
 import { useTheme } from "../context/ThemeContext.jsx";
 
 function NavBar() {
@@ -36,12 +36,7 @@ function NavBar() {
   return (
     <header className={`${styles.nav} ${scrolled ? styles.navScrolled : ""} ${menuOpen ? styles.navOpen : ""}`}>
       <Link to="/" className={styles.brand}>
-        {/* <div className={styles.logoMark}>
-          <FiShield color="white" size={18} />
-        </div>
-        FaceID<span className={styles.accent}>Pro</span> */}
-        {/* Brand */}
-          <img src={logo} alt="Logo"></img>
+        <BrandLogo className={styles.brandLogo} />
       </Link>
 
       <button

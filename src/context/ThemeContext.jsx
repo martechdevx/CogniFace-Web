@@ -3,11 +3,13 @@ import { createContext, useContext, useEffect, useState } from "react";
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState(() => localStorage.getItem("faceio-theme") || "light");
+  const [theme, setTheme] = useState(() =>
+    localStorage.getItem("cogniface-theme") || localStorage.getItem("faceio-theme") || "light"
+  );
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    localStorage.setItem("faceio-theme", theme);
+    localStorage.setItem("cogniface-theme", theme);
   }, [theme]);
 
   function toggleTheme() {

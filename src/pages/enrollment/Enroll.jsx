@@ -45,13 +45,14 @@ function Enroll() {
 
   if (!isLoggedIn) {
     return (
-      <div className="gate-wrap">
-        <div className="gate-box">
-          <div className="gate-icon"><FiShield size={32} /></div>
-          <h2>Access Restricted</h2>
-          <p>You need to be logged in to enroll a face into the system.</p>
-          <Link to="/login" className="btn btn-primary" style={{ padding: "12px 28px" }}>
-            Log In
+      <div className={styles.accessPage}>
+        <div className={styles.accessCard}>
+          <span className={styles.accessIcon}><FiShield /></span>
+          <span className={styles.accessEyebrow}>COGNIFACE WORKSPACE</span>
+          <h1>Sign in to continue</h1>
+          <p>Enrollment is available to signed-in workspace users.</p>
+          <Link to="/login" className={styles.accessButton}>
+            Log in <FiArrowRight />
           </Link>
         </div>
       </div>
@@ -221,7 +222,7 @@ function Enroll() {
           <span className={styles.breadSep}>›</span>
           <span className={styles.breadCurrent}>Enrollment</span>
         </div>
-        <h1 className={styles.title}>Face Enrollment</h1>
+        <h1 className={styles.title}>Identity Enrollment</h1>
         <p className={styles.subtitle}>
           Register a new person by entering their details and uploading up to 3 clear face photos.
           More images improve matching accuracy.
@@ -568,7 +569,7 @@ function Enroll() {
               "Ensure good lighting on the face",
               "Avoid heavy shadows or sunglasses",
               "Different angles improve accuracy",
-              "Minimum 1 image, maximum 6",
+              `Minimum 1 image, maximum ${MAX_IMAGES}`,
             ].map(tip => (
               <div key={tip} style={{
                 display: "flex", gap: 8, alignItems: "flex-start",
